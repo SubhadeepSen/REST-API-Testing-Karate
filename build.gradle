@@ -1,0 +1,27 @@
+
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java-library'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile 'com.intuit.karate:karate-junit4:0.9.4'
+    testCompile 'com.intuit.karate:karate-apache:0.9.4'
+	
+	testCompile 'net.masterthought:cucumber-reporting:4.11.1'
+	testCompile 'org.apache.logging.log4j:log4j-api:2.5'
+	testCompile 'org.apache.logging.log4j:log4j-core:2.5'
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir file('src/test/java')
+            exclude '**/*.java'
+        }
+    }
+}
